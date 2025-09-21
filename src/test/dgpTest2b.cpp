@@ -34,18 +34,19 @@
 
 #include <string>
 #include <iostream>
+#include <vector>
 
 using namespace std;
 
-#include <wrl/SceneGraphTraversal.hpp>
-#include <io/AppLoader.hpp>
-#include <io/AppSaver.hpp>
-#include <io/LoaderPly.hpp>
-#include <io/LoaderStl.hpp>
-#include <io/LoaderWrl.hpp>
-#include <io/SaverPly.hpp>
-#include <io/SaverStl.hpp>
-#include <io/SaverWrl.hpp>
+#include "../wrl/SceneGraphTraversal.hpp"
+#include "../io/AppLoader.hpp"
+#include "../io/AppSaver.hpp"
+#include "../io/LoaderPly.hpp"
+#include "../io/LoaderStl.hpp"
+#include "../io/LoaderWrl.hpp"
+#include "../io/SaverPly.hpp"
+#include "../io/SaverStl.hpp"
+#include "../io/SaverWrl.hpp"
 #include "dgpPrt.hpp"
 
 class Data {
@@ -155,7 +156,7 @@ int main(int argc, char **argv) {
   LoaderWrl* wrlLoader = new LoaderWrl();
   loaderFactory.registerLoader(wrlLoader);
 
-  // register output file savers  
+  // register output file savers
   SaverPly* plySaver = new SaverPly();
   saverFactory.registerSaver(plySaver);
   SaverStl* stlSaver = new SaverStl();
@@ -208,7 +209,7 @@ int main(int argc, char **argv) {
       Shape* shape = dynamic_cast<Shape*>(node);
       if(shape==(Shape*)0) continue;
       const string& shapeName = shape->getName();
-      
+
       IndexedFaceSet* ifs =
         dynamic_cast<IndexedFaceSet*>(shape->getGeometry());
       if(ifs==(IndexedFaceSet*)0) continue;
@@ -218,7 +219,9 @@ int main(int argc, char **argv) {
         printIndexedFaceSetInfo(cout, shapeName, iIfs,*ifs,"    ");
       }
 
-      // TODO ...
+			if (D._removeNormal)   ifs->getNormal().clear();
+			if (D._removeColor)    ifs->getColor().clear();
+			if (D._removeTexCoord) ifs->getTexCoord().clear();
 
       if(D._debug) {
         cout << "  after processing" << endl;
@@ -228,12 +231,12 @@ int main(int argc, char **argv) {
       if(D._debug) cout << "" << endl;
     }
 
-    if(D._debug) cout << "  }" << endl;  
+    if(D._debug) cout << "  }" << endl;
   }
-  
+
   //////////////////////////////////////////////////////////////////////
   // write
-  
+
   if(D._debug) {
     cout << "  saving outFile {" << endl;
   }
