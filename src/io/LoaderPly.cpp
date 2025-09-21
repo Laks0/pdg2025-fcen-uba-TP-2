@@ -151,7 +151,7 @@ void LoaderPly::addBinaryValue
       double v = buff.d[0];
       valueDouble->push_back(v);
     }
-    break; 
+    break;
   case Ply::Element::Property::NONE:
     {
       throw new StrException("unexpected NONE binary value tyde");
@@ -338,17 +338,17 @@ size_t LoaderPly::readHeader(FILE* fp, Ply& ply, const string indent) {
           throw new StrException("expecting element name");
          string elementName = ftkn;
 
-        if(ftkn.get()==false)      
+        if(ftkn.get()==false)
           throw new StrException("expecting element nRecords");
         int nRecords = atoi(ftkn.c_str());
         if(nRecords<0)
           throw new StrException("expecting non-negative element nRecords");
-    
+
         // APP->log(QString("%1  element %2 %3")
         //          .arg(indent.c_str())
         //          .arg(elementName.c_str())
         //          .arg(nRecords));
-    
+
         element = ply.addElement(elementName,nRecords);
 
       } else if(ftkn=="property") {
@@ -357,25 +357,25 @@ size_t LoaderPly::readHeader(FILE* fp, Ply& ply, const string indent) {
         Ply::Element::Property::Type listType;
         Ply::Element::Property::Type propertyType;
         string                       propertyName;
-    
-        if(ftkn.get()==false)      
+
+        if(ftkn.get()==false)
           throw new StrException("early end of property");
 
         if(ftkn.equals("list")) {
 
           list = true;
 
-          if(ftkn.get()==false)      
+          if(ftkn.get()==false)
             throw new StrException("expecting listType");
 
           listType = Ply::Element::Property::parseType(ftkn);
 
-          if(ftkn.get()==false)      
+          if(ftkn.get()==false)
             throw new StrException("expecting propertyType");
 
           propertyType = Ply::Element::Property::parseType(ftkn);
 
-          if(ftkn.get()==false)      
+          if(ftkn.get()==false)
             throw new StrException("expecting property name");
 
           propertyName = ftkn;
@@ -393,7 +393,7 @@ size_t LoaderPly::readHeader(FILE* fp, Ply& ply, const string indent) {
 
           propertyType = Ply::Element::Property::parseType(ftkn);
 
-          if(ftkn.get()==false)      
+          if(ftkn.get()==false)
             throw new StrException("expecting property name");
 
           propertyName = ftkn;
@@ -592,7 +592,7 @@ size_t LoaderPly::readBinaryData(FILE* fp, Ply& ply, const string indent) {
               int n =
                 (propertyType==Ply::Element::Property::Type::FLOAT32_3)?3:
                 (propertyType==Ply::Element::Property::Type::FLOAT32_2)?2:1;
-            
+
               if(propertyName=="color")
                 nBytesValue = 1;
               else
@@ -717,9 +717,9 @@ size_t LoaderPly::readAsciiData(FILE* fp, Ply& ply, const string indent) {
             property     = element->getProperty(iProperty);
             propertyName = property->getName();
             propertyType = property->getPropertyType();
-  
+
             if(property->isList()==true) {
- 
+
               nList = 0;
 
               if(stkn.get()==false) {
@@ -732,9 +732,9 @@ size_t LoaderPly::readAsciiData(FILE* fp, Ply& ply, const string indent) {
 
               if(wrlMode==false || propertyName!="coordIndex")
                 property->pushBackList(nList);
- 
+
               value = property->getValue();
-  
+
                for(i=0;i<nList;i++) {
                  if(stkn.get()==false) {
                    char s[128];
@@ -750,7 +750,7 @@ size_t LoaderPly::readAsciiData(FILE* fp, Ply& ply, const string indent) {
             } else /* if(property.isList()==false) */ {
 
               value = property->getValue();
- 
+
               int n =
                 (propertyType==Ply::Element::Property::Type::FLOAT32_3)?3:
                 (propertyType==Ply::Element::Property::Type::FLOAT32_2)?2:1;
@@ -846,7 +846,7 @@ bool LoaderPly::load(const char* filename, Ply & ply, const string indent) {
 
       fclose(fp);
     }
-    
+
     // APP->log(QString("%1  nBytesRead = %2")
     //          .arg(indent.c_str())
     //          .arg(nBytesHeader+nBytesData));
@@ -855,7 +855,7 @@ bool LoaderPly::load(const char* filename, Ply & ply, const string indent) {
 
     success = true;
 
-  } catch(StrException* e) { 
+  } catch(StrException* e) {
 
     ply.clear();
     if(fp) fclose(fp);
@@ -914,7 +914,7 @@ bool LoaderPly::load
 
     success = true;
 
-  } catch(StrException* e) { 
+  } catch(StrException* e) {
 
     if(ply) delete ply;
     // APP->log(QString("  %1").arg(e->what()));

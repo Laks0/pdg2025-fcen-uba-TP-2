@@ -36,14 +36,14 @@
 #define _SAVER_WRL_HPP_
 
 #include "Saver.hpp"
-#include <wrl/Shape.hpp>
-#include <wrl/Appearance.hpp>
-#include <wrl/Material.hpp>
-#include <wrl/IndexedFaceSet.hpp>
-#include <wrl/IndexedLineSet.hpp>
-#include <wrl/ImageTexture.hpp>
-#include <wrl/Transform.hpp>
-#include <wrl/SceneGraphTraversal.hpp>
+#include "../wrl/Shape.hpp"
+#include "../wrl/Appearance.hpp"
+#include "../wrl/Material.hpp"
+#include "../wrl/IndexedFaceSet.hpp"
+#include "../wrl/IndexedLineSet.hpp"
+#include "../wrl/ImageTexture.hpp"
+#include "../wrl/Transform.hpp"
+#include "../wrl/SceneGraphTraversal.hpp"
 
 class SaverWrl : public Saver {
 

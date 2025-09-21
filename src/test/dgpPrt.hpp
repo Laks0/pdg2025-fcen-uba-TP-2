@@ -37,7 +37,7 @@
 
 #include <string>
 #include <iostream>
-#include <wrl/IndexedFaceSet.hpp>
+#include "../wrl/IndexedFaceSet.hpp"
 
 const char* tv(bool value);
 

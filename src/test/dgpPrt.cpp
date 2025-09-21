@@ -31,7 +31,7 @@
 // ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 // (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 // SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
+
 #include "dgpPrt.hpp"
 
 const char* tv(bool value) { return (value)?"true":"false"; }
@@ -54,7 +54,13 @@ void printIndexedFaceSetInfo
 
   ostr << indent << "IndexedFaceSet[" << iIfs << "] {" << endl;
 
-  // TODO
+  ostr << indent << indent << "shapeName        = \"" << ifs.getName() << "\"" << endl;
+  ostr << indent << indent << "numberOfVertices = " << ifs.getNumberOfVertices() << endl;
+  ostr << indent << indent << "numberOfFaces    = " << ifs.getNumberOfFaces() << endl;
+  ostr << indent << indent << "isTriangleMesh   = " << (ifs.isTriangleMesh() ? "true" : "false") << endl;
+  ostr << indent << indent << "colorBinding     = " << ifs.stringBinding(ifs.getColorBinding()) << endl;
+  ostr << indent << indent << "normalBinding    = " << ifs.stringBinding(ifs.getNormalBinding()) << endl;
+  ostr << indent << indent << "texCoordBinding  = " << ifs.stringBinding(ifs.getTexCoordBinding()) << endl;
 
   ostr << indent << "}" << endl;
 }

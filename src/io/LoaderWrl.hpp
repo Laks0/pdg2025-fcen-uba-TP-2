@@ -37,13 +37,13 @@
 
 #include "Loader.hpp"
 #include "TokenizerFile.hpp"
-#include <wrl/Transform.hpp>
-#include <wrl/Shape.hpp>
-#include <wrl/Appearance.hpp>
-#include <wrl/Material.hpp>
-#include <wrl/ImageTexture.hpp>
-#include <wrl/IndexedFaceSet.hpp>
-#include <wrl/IndexedLineSet.hpp>
+#include "../wrl/Transform.hpp"
+#include "../wrl/Shape.hpp"
+#include "../wrl/Appearance.hpp"
+#include "../wrl/Material.hpp"
+#include "../wrl/ImageTexture.hpp"
+#include "../wrl/IndexedFaceSet.hpp"
+#include "../wrl/IndexedLineSet.hpp"
 
 class LoaderWrl : public Loader {
 

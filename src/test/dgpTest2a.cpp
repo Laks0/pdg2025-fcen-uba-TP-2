@@ -31,23 +31,23 @@
 // ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 // (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 // SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
+
 #include <string>
 #include <iostream>
 
 using namespace std;
 
-#include <wrl/SceneGraphTraversal.hpp>
-#include <wrl/Shape.hpp>
-#include <wrl/IndexedFaceSet.hpp>
-#include <io/AppLoader.hpp>
-#include <io/AppSaver.hpp>
-#include <io/LoaderPly.hpp>
-#include <io/LoaderStl.hpp>
-#include <io/LoaderWrl.hpp>
-#include <io/SaverPly.hpp>
-#include <io/SaverStl.hpp>
-#include <io/SaverWrl.hpp>
+#include "../wrl/SceneGraphTraversal.hpp"
+#include "../wrl/Shape.hpp"
+#include "../wrl/IndexedFaceSet.hpp"
+#include "../io/AppLoader.hpp"
+#include "../io/AppSaver.hpp"
+#include "../io/LoaderPly.hpp"
+#include "../io/LoaderStl.hpp"
+#include "../io/LoaderWrl.hpp"
+#include "../io/SaverPly.hpp"
+#include "../io/SaverStl.hpp"
+#include "../io/SaverWrl.hpp"
 #include "dgpPrt.hpp"
 
 class Data {
@@ -135,7 +135,7 @@ int main(int argc, char **argv) {
   LoaderWrl* wrlLoader = new LoaderWrl();
   loaderFactory.registerLoader(wrlLoader);
 
-  // register output file savers  
+  // register output file savers
   SaverPly* plySaver = new SaverPly();
   saverFactory.registerSaver(plySaver);
   SaverStl* stlSaver = new SaverStl();
@@ -175,7 +175,7 @@ int main(int argc, char **argv) {
 
   if(success==false) return -1;
 
-  
+
   //////////////////////////////////////////////////////////////////////
   // print some info about each IndexedFaceSet in the scene graph
 
@@ -184,7 +184,7 @@ int main(int argc, char **argv) {
   if(D._debug) {
     cout << "  SceneGraphTraversal {" << endl;
   }
-  
+
   SceneGraphTraversal sgt(wrl);
   Node* node;
   while((node=sgt.next())!=nullptr) {
@@ -202,15 +202,15 @@ int main(int argc, char **argv) {
 
     iIfs++;
   }
-  
+
   if(D._debug) {
     cout << "  } SceneGraphTraversal" << endl;
     cout << endl;
   }
-  
+
   //////////////////////////////////////////////////////////////////////
   // write
-  
+
   if(D._debug) {
     cout << "  saving outFile {" << endl;
   }

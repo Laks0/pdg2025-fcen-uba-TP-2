@@ -5,3 +5,10 @@ build-*
 *.pro.user
 *~
 
+CMake*
+cmake*
+Makefile
+
+*.a
+
+src/test/dgpTest2a

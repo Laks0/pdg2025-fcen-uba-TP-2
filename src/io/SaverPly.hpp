@@ -43,10 +43,10 @@
 #define SAVER_PLY_HPP
 
 #include <iostream>
-#include <util/Endian.hpp>
-#include <wrl/SceneGraph.hpp>
-#include <wrl/IndexedFaceSet.hpp>
-#include <wrl/IndexedFaceSetPly.hpp>
+#include "../util/Endian.hpp"
+#include "../wrl/SceneGraph.hpp"
+#include "../wrl/IndexedFaceSet.hpp"
+#include "../wrl/IndexedFaceSetPly.hpp"
 #include "Saver.hpp"
 
 class SaverPly : public Saver {

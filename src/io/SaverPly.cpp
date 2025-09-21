@@ -40,14 +40,14 @@
 // DAMAGE.
 
 #include "SaverPly.hpp"
-#include <wrl/Shape.hpp>
-#include <wrl/Appearance.hpp>
-#include <wrl/Material.hpp>
-#include <wrl/IndexedFaceSet.hpp>
-#include <wrl/IndexedFaceSetPly.hpp>
-#include <io/StrException.hpp>
-#include <util/Endian.hpp>
-#include <util/CastMacros.hpp>
+#include "../wrl/Shape.hpp"
+#include "../wrl/Appearance.hpp"
+#include "../wrl/Material.hpp"
+#include "../wrl/IndexedFaceSet.hpp"
+#include "../wrl/IndexedFaceSetPly.hpp"
+#include "../io/StrException.hpp"
+#include "../util/Endian.hpp"
+#include "../util/CastMacros.hpp"
 
 #include <iostream>
 using namespace std;
