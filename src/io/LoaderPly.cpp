@@ -48,11 +48,11 @@ using namespace std;
 #include "TokenizerFile.hpp"
 #include "TokenizerString.hpp"
 #include "StrException.hpp"
-#include <wrl/Shape.hpp>
-#include <wrl/Appearance.hpp>
-#include <wrl/Material.hpp>
-#include <wrl/ImageTexture.hpp>
-#include <wrl/IndexedFaceSetPly.hpp>
+#include "../wrl/Shape.hpp"
+#include "../wrl/Appearance.hpp"
+#include "../wrl/Material.hpp"
+#include "../wrl/ImageTexture.hpp"
+#include "../wrl/IndexedFaceSetPly.hpp"
 
 const char* LoaderPly::_ext = "ply";
 

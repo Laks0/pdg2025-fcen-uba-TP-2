@@ -43,9 +43,9 @@
 #define _LOADER_PLY_HPP_
 
 #include "Loader.hpp"
-#include <util/Endian.hpp>
-#include <wrl/Ply.hpp>
-#include <wrl/SceneGraph.hpp>
+#include "../util/Endian.hpp"
+#include "../wrl/Ply.hpp"
+#include "../wrl/SceneGraph.hpp"
 
 class LoaderPly : public Loader {
 

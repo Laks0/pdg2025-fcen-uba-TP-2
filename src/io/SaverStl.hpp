@@ -39,7 +39,7 @@
 
 #include <cstdio>
 #include "Saver.hpp"
-#include "wrl/IndexedFaceSet.hpp"
+#include "../wrl/IndexedFaceSet.hpp"
 
 class SaverStl : public Saver {
 

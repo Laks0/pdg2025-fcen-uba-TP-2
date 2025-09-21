@@ -548,7 +548,7 @@ void GuiGLWidget::setMaterialColor(const QColor& materialColor) {
 }
 
 //////////////////////////////////////////////////////////////////////
-void GuiGLWidget::enterEvent(QEnterEvent* /*event*/) {
+void GuiGLWidget::enterEvent(QEvent* /*event*/) {
   _mouseInside = true;
 }
 

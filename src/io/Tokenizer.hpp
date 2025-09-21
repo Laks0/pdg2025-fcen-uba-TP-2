@@ -42,7 +42,7 @@
 #ifndef TOKENIZER_HPP
 #define TOKENIZER_HPP
 
-#include <wrl/Node.hpp>
+#include "../wrl/Node.hpp"
 
 // abstract class
 // use TokenizerFile or TokenizerString instead

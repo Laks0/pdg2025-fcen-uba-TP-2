@@ -85,7 +85,7 @@ GuiGLBuffer::GuiGLBuffer(IndexedFaceSet* pIfs, QColor& materialColor):
   int            nF          = pIfs->getNumberOfFaces();
 
   // material color values in [0.0:1.0] range
-  float /*qreal*/ matR,matG,matB,matA;
+  qreal matR,matG,matB,matA;
   materialColor.getRgbF(&matR,&matG,&matB,&matA);
   QVector3D matColor(matR,matG,matB);
 
@@ -276,7 +276,7 @@ GuiGLBuffer::GuiGLBuffer(IndexedLineSet* pIls, QColor& materialColor):
   int            nP             = pIls->getNumberOfPolylines();
 
   // material color values in [0.0:1.0] range
-  float /*qreal*/ matR,matG,matB,matA;
+  qreal matR,matG,matB,matA;
   materialColor.getRgbF(&matR,&matG,&matB,&matA);
   QVector3D matColor(matR,matG,matB);
 

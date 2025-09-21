@@ -35,7 +35,7 @@
 #ifndef _Loader_hpp_
 #define _Loader_hpp_
 
-#include <wrl/SceneGraph.hpp>
+#include "../wrl/SceneGraph.hpp"
 
 class Loader {
 

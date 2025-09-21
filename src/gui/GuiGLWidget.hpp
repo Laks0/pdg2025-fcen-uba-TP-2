@@ -105,7 +105,7 @@ protected:
   void paintSceneGraph(QMatrix4x4& mvp, SceneGraph* wrl);
   void paintShape(QMatrix4x4& mvp, Shape* shape);
 
-  virtual void	enterEvent(QEnterEvent * event)                 Q_DECL_OVERRIDE;
+  virtual void	enterEvent(QEvent * event)                 Q_DECL_OVERRIDE;
   virtual void	leaveEvent(QEvent * event)                 Q_DECL_OVERRIDE;
   virtual void	mousePressEvent(QMouseEvent * event)       Q_DECL_OVERRIDE;
   virtual void	mouseReleaseEvent(QMouseEvent * event)     Q_DECL_OVERRIDE;

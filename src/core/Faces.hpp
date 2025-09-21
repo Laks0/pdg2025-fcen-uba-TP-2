@@ -1,6 +1,6 @@
 //------------------------------------------------------------------------
 //  Copyright (C) Gabriel Taubin
-//  Time-stamp: <2025-08-05 16:34:20 taubin>
+//  Time-stamp: <2025-08-04 22:10:14 gtaubin>
 //------------------------------------------------------------------------
 //
 // Faces.hpp
@@ -89,7 +89,10 @@ public:
 
 private:
 
-  // TODO
+  int _nV;
+
+	const vector<int> * _coordIndexReference;
+	vector<int> _faceIndex;
 
 };
 

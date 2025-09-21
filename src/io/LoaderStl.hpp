@@ -40,8 +40,9 @@
 #include "Loader.hpp"
 #include "TokenizerFile.hpp"
 
-#include "wrl/Node.hpp"
-#include "wrl/IndexedFaceSet.hpp"
+#include "../wrl/Node.hpp"
+#include "../wrl/IndexedFaceSet.hpp"
+#include <cstdint>
 
 class LoaderStl : public Loader {
 

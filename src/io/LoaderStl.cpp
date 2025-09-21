@@ -47,10 +47,10 @@
 #include "LoaderStl.hpp"
 #include "StrException.hpp"
 
-#include "wrl/Shape.hpp"
-#include "wrl/Appearance.hpp"
-#include "wrl/Material.hpp"
-#include "wrl/IndexedFaceSet.hpp"
+#include "../wrl/Shape.hpp"
+#include "../wrl/Appearance.hpp"
+#include "../wrl/Material.hpp"
+#include "../wrl/IndexedFaceSet.hpp"
 
 // reference
 // https://en.wikipedia.org/wiki/STL_(file_format)
@@ -168,7 +168,7 @@ bool LoaderStl::load(const char* filename, SceneGraph& wrl) {
       vector<int>& coordIndex = ifs->getCoordIndex();
       vector<float>& coord    = ifs->getCoord();
       vector<float>& normal   = ifs->getNormal();
-      // 6) set the normalPerVertex variable to false (i.e., normals per face)  
+      // 6) set the normalPerVertex variable to false (i.e., normals per face)
       ifs->setNormalPerVertex(false);
 
       int   iV0,iV1,iV2,iT;
@@ -196,7 +196,7 @@ bool LoaderStl::load(const char* filename, SceneGraph& wrl) {
         coordIndex.push_back(iV2);
         coordIndex.push_back(-1);
       }
-      
+
       success = true;
 
       fclose(fp);
@@ -206,7 +206,7 @@ bool LoaderStl::load(const char* filename, SceneGraph& wrl) {
       fp = fopen(filename,"r");
       if(fp==(FILE*)0)
         throw new StrException("unable to open ASCII STL file");
-        
+
       // use the io/TokenizerFile class to parse the input ascii file
       TokenizerFile tkn(fp);
       // first token should be "solid"
@@ -223,7 +223,7 @@ bool LoaderStl::load(const char* filename, SceneGraph& wrl) {
       vector<int>& coordIndex = ifs->getCoordIndex();
       vector<float>& coord    = ifs->getCoord();
       vector<float>& normal   = ifs->getNormal();
-      // set the normalPerVertex variable to false (i.e., normals per face)  
+      // set the normalPerVertex variable to false (i.e., normals per face)
       ifs->setNormalPerVertex(false);
 
       int   iV0,iV1,iV2;
@@ -255,8 +255,8 @@ bool LoaderStl::load(const char* filename, SceneGraph& wrl) {
       // close the file (this statement may not be reached)
       fclose(fp);
     }
- 
-  } catch(StrException* e) { 
+
+  } catch(StrException* e) {
 
     if(fp!=(FILE*)0) fclose(fp);
     fprintf(stderr,"LoaderStl | ERROR | %s\n",e->what());

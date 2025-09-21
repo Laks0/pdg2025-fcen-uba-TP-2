@@ -1,6 +1,6 @@
 //------------------------------------------------------------------------
 //  Copyright (C) Gabriel Taubin
-//  Time-stamp: <2025-08-05 16:34:27 taubin>
+//  Time-stamp: <2025-08-04 22:09:56 gtaubin>
 //------------------------------------------------------------------------
 //
 // Faces.cpp
@@ -34,50 +34,56 @@
 // (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 // SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+#include <algorithm>
 #include <math.h>
 #include "Faces.hpp"
-  
+
 Faces::Faces(const int nV, const vector<int>& coordIndex) {
-  // TODO
+	_nV = nV;
+
+	_coordIndexReference = &coordIndex;
+
+	_faceIndex.push_back(0);
+	for (int idx = 0; idx < coordIndex.size(); idx++) {
+		if (coordIndex[idx] == -1)
+			_faceIndex.push_back(idx+1);
+	}
 }
 
 int Faces::getNumberOfVertices() const {
-  // TODO
-  return 0;
+	return _nV;
 }
 
 int Faces::getNumberOfFaces() const {
-  // TODO
-  return 0;
+	return _faceIndex.size()-1;
 }
 
 int Faces::getNumberOfCorners() const {
-  // TODO
-  return 0;
+	return _coordIndexReference->size();
 }
 
 int Faces::getFaceSize(const int iF) const {
-  // TODO
-  return 0;
+	if (iF == _faceIndex.size()-1) return 0;
+	return _faceIndex[iF+1] - _faceIndex[iF] - 1;
 }
 
 int Faces::getFaceFirstCorner(const int iF) const {
-  // TODO
-  return -1;
+	if (iF >= _faceIndex.size()-1) return -1;
+	return _faceIndex[iF];
 }
 
 int Faces::getFaceVertex(const int iF, const int j) const {
-  // TODO
-  return -1;
+	return (*_coordIndexReference)[_faceIndex[iF]+j];
 }
 
 int Faces::getCornerFace(const int iC) const {
-  // TODO
-  return -1;
+	if ((*_coordIndexReference)[iC] == -1) return -1;
+	return _faceIndex.end() - lower_bound(_faceIndex.begin(), _faceIndex.end(), iC);
 }
 
 int Faces::getNextCorner(const int iC) const {
-  // TODO
-  return -1;
+	if ((*_coordIndexReference)[iC] == -1) return -1;
+	if ((*_coordIndexReference)[iC+1] != -1) return (*_coordIndexReference)[iC+1];
+	return getFaceFirstCorner(getCornerFace(iC));
 }
 
