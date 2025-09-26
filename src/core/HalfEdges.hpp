@@ -100,7 +100,7 @@ public:
 
   // if the edge index iE is in range, this method returns the number
   // of half edges incident to the given edge; otherwise it returns 0
-                                   
+
   int     getNumberOfEdgeHalfEdges(const int iE) const;
 
   // if the edge index iE is in range, and
@@ -108,7 +108,7 @@ public:
   // corner corresponding to a half edge incident to the given edge
 
   int     getEdgeHalfEdge(const int iE, const int j) const;
-
+
 protected:
 
   // reference to the coordIndex passed as argument

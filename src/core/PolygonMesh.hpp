@@ -38,11 +38,12 @@
 // (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
 // USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
 // DAMAGE.
-
+
 #ifndef _POLYGONMESH_HPP_
 #define _POLYGONMESH_HPP_
 
 #include <vector>
+#include "Faces.hpp"
 #include "HalfEdges.hpp"
 
 using namespace std;
@@ -94,7 +95,7 @@ public:
   // to the edge iE; otherwise it returns false
 
      bool    isEdgeFace(const int iE, const int iF)    const;
-
+
   // edges are classified as boundary, regular, or singular depending
   // on the number of incident faces: 1=boundary, 2=regular, 3 or
   // more=singular
@@ -153,7 +154,7 @@ public:
   // to the same vertex determines which vertices are regular and
   // which are singular. If only one of these parts point to a given
   // vertex, then the vertex is regular. If two or more of these parts
-  // point to a given vertex, then the vertex is singular. 
+  // point to a given vertex, then the vertex is singular
 
   // the polygon mesh is regular if and only if it does not have any
   // singular edges and it does not have any singular vertices
@@ -164,7 +165,7 @@ public:
   // boundary edge
 
      bool    hasBoundary()                             const;
-  
+
 private:
 
   // consider these private variables a suggestion
@@ -172,7 +173,7 @@ private:
 
   vector<int>      _nPartsVertex;
   vector<bool> _isBoundaryVertex;
-  
+  Faces                   _faces;
 };
 
 #endif /* _POLYGONMESH_HPP_ */

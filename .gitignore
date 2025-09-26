@@ -12,3 +12,4 @@ Makefile
 *.a
 
 src/test/dgpTest2a
+src/test/dgpTest2c

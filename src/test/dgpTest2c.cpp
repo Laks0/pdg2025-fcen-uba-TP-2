@@ -37,19 +37,19 @@
 
 using namespace std;
 
-#include <wrl/SceneGraphTraversal.hpp>
+#include "../wrl/SceneGraphTraversal.hpp"
 
-#include <io/AppLoader.hpp>
-#include <io/AppSaver.hpp>
-#include <io/LoaderPly.hpp>
-#include <io/LoaderStl.hpp>
-#include <io/LoaderWrl.hpp>
-#include <io/SaverPly.hpp>
-#include <io/SaverStl.hpp>
-#include <io/SaverWrl.hpp>
+#include "../io/AppLoader.hpp"
+#include "../io/AppSaver.hpp"
+#include "../io/LoaderPly.hpp"
+#include "../io/LoaderStl.hpp"
+#include "../io/LoaderWrl.hpp"
+#include "../io/SaverPly.hpp"
+#include "../io/SaverStl.hpp"
+#include "../io/SaverWrl.hpp"
 
-#include <core/PolygonMesh.hpp>
-#include <core/PolygonMeshTest.hpp>
+#include "../core/PolygonMesh.hpp"
+#include "../core/PolygonMeshTest.hpp"
 
 #include "dgpPrt.hpp"
 

@@ -43,7 +43,7 @@
 #define _POLYGON_MESH_TEST_HPP_
 
 #include <iostream>
-#include <wrl/SceneGraph.hpp>
+#include "../wrl/SceneGraph.hpp"
 #include "PolygonMesh.hpp"
 
 class PolygonMeshTest {

@@ -38,14 +38,14 @@
 // (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
 // USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
 // DAMAGE.
-
+
 #include <iostream>
 #include "PolygonMeshTest.hpp"
-#include <wrl/Shape.hpp>
-#include <wrl/Appearance.hpp>
-#include <wrl/Material.hpp>
-#include <wrl/IndexedFaceSet.hpp>
-#include <wrl/SceneGraphTraversal.hpp>
+#include "../wrl/Shape.hpp"
+#include "../wrl/Appearance.hpp"
+#include "../wrl/Material.hpp"
+#include "../wrl/IndexedFaceSet.hpp"
+#include "../wrl/SceneGraphTraversal.hpp"
 
 PolygonMeshTest::PolygonMeshTest
 (SceneGraph& wrl, const string& indent, ostream& ostr):_ostr(ostr) {
@@ -79,7 +79,7 @@ PolygonMeshTest::PolygonMeshTest
                 << " ]" << endl;    
         }
       }
-      
+      
       node = shape->getGeometry();
       if(node==(Node*)0) {
         _ostr << indent << "    geometry = NULL" << endl;    
@@ -131,7 +131,7 @@ PolygonMeshTest::PolygonMeshTest
             nE_other++;
           }
         }
-
+
         for(iV=0;iV<nV;iV++) {
           if(pMesh.isBoundaryVertex(iV))
             nV_boundary++;
